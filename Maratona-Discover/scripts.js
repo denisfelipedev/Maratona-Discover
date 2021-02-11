@@ -24,27 +24,28 @@ const Storage = {
 }
 
 const Transaction = {
-    all: [
-        { 
-        description: 'Luz',
-        amount: -20001,
-        date: '10/02/2021'
-        },
-        { 
-        description: 'Desenvolvimento WebSite',
-        amount: 100000,
-        date: '03/02/2021'
-        },
-        { 
-        description: 'Internet',
-        amount: -12000,
-        date: '01/02/2021'
-        },
-        { 
-        description: 'App',
-        amount: 200000,
-        date: '01/02/2021'
-        }], 
+    all: Storage.get(),
+        // [
+        // { 
+        // description: 'Luz',
+        // amount: -20001,
+        // date: '10/02/2021'
+        // },
+        // { 
+        // description: 'Desenvolvimento WebSite',
+        // amount: 100000,
+        // date: '03/02/2021'
+        // },
+        // { 
+        // description: 'Internet',
+        // amount: -12000,
+        // date: '01/02/2021'
+        // },
+        // { 
+        // description: 'App',
+        // amount: 200000,
+        // date: '01/02/2021'
+        // }], 
     add(transaction){
         Transaction.all.push(transaction)
 
@@ -147,6 +148,7 @@ const Utils = {
 
         value = String(value).replace(/\D/g,"")
         value = Number(value)/100
+        // value = value / 100;
 
         value = value.toLocaleString("pt-br",{
             style: "currency",
@@ -154,6 +156,7 @@ const Utils = {
         })
 
         return signal + value
+        // return value
     }
 }
 
@@ -232,6 +235,8 @@ const App = {
         Transaction.all.forEach(DOM.addTransaction)
         
         DOM.updateBalance()
+
+        Storage.set(Transaction.all)
 
     },
     reload(){

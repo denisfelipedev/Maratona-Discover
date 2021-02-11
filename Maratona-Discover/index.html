@@ -29,21 +29,21 @@
                     <span>Entradas</span>
                     <img src="./assets/income.svg" alt="Imagem de Entrada de Crédito">
                 </h3>
-                <p id="income-display"></p>
+                <p id="income-display">R$ 0,00</p>
             </div>
             <div class="card">
                 <h3>
                     <span>Saídas</span>
                     <img src="./assets/expense.svg" alt="Imagem de Saída de Valor">
                 </h3>
-                <p id="expanse-display"></p>
+                <p id="expanse-display">R$ 0,00</p>
             </div>
             <div class="card total">
                 <h3>
                     <span>Saldo</span>
                     <img src="./assets/total.svg" alt="Imagem de Saldo Total">
                 </h3>
-                <p id="total-display"></p>
+                <p id="total-display">R$ 0,00</p>
             </div>
         </section>
         <section id="transactions">
@@ -77,7 +77,7 @@
                 <h2>
                     Nova Transação
                 </h2>
-                <form action="">
+                <form action="" onsubmit="Form.submit(event)">
                     <div class="input-group">
                         <label 
                         class="sr-only"
